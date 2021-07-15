@@ -34,9 +34,9 @@ There are four type of character in the password:</br>
 
 ## Link to Deployed Application
 
-Live: 
+Live: https://jamesgli520.github.io/Password-Generator/
 
-Github repository: 
+Github repository: https://github.com/jamesgli520/Password-Generator
 
 ## License & copyright
 
