@@ -5,12 +5,13 @@
 ## Description
 This is a password generator that generates the password randomly. </br></br>
 
-The application has several functionalities:</br>
-    1) Prompt window for user to input.</br>
-    2) Check the length of password which it has to be at least 8 characters
+It is a password generator application that it has several functionalities:</br>
+    1) It has a button to generate password randomly</br>
+    2) Ask user to input the length of password
+    3) Check the length of password which it has to be at least 8 characters
        and no more than 128 characters.</br>
-    3) Users are able to confirm whether or not to include character types.</br>
-    4) Check the input that it has to be at least one character type in the
+    4) Users are able to confirm whether or not to include character types.</br>
+    5) Check the input that it has to be at least one character type in the
        password.</br></br>
        
     
@@ -22,13 +23,24 @@ There are four type of character in the password:</br>
 
 ## Screenshot
 <p>
-    <img src="image\homepage.PNG" />
-    <img src="image\length.PNG" />
-    <img src="image\num.PNG" />
-    <img src="image\sp.PNG" />
-    <img src="image\lc.PNG" />
-    <img src="image\uc.PNG" />
-    <img src="image\password.PNG" />
+    <img src="image\homepage.PNG" /></br></br>
+    <img src="image\length.PNG" /></br></br>
+    <img src="image\num.PNG" /></br></br>
+    <img src="image\sp.PNG" /></br></br>
+    <img src="image\lc.PNG" /></br></br>
+    <img src="image\uc.PNG" /></br></br>
+    <img src="image\password.PNG" /></br></br>
+</p>
+
+## Executed When No Length Is Inputed
+<p>
+    <img src="image\noInputLength.PNG" /></br></br>  
+</p>
+
+## Executed When No Character Type Is Inputed
+<p>
+    <img src="image\noInputChType.PNG" /></br></br>
+    <img src="image\startover.PNG" /></br></br>
 </p>
 
 

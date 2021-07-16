@@ -21,7 +21,7 @@ var toIncludeSpecial;
 var toIncludeLowercase;
 var toIncludeUppercase;
 
-//Array
+//Array stores character type
 var numericArray;
 var specialCharacterArray;
 var lowercaseArray;
@@ -50,6 +50,8 @@ function generatePassword(){
                 }
                 
             }else{
+                //function call saved in these variable below
+                //prompt users whether or not to include the character type(s)
                 numeric = toIncludeNumberMethod();
                 specialCharacter = toIncludeSpecialrMethod();
                 lowercaseLetter = toIncludeLowercaseMethod();
@@ -64,6 +66,7 @@ function generatePassword(){
                         return;
                     }
                 }else{
+                    //return the generated password
                     validationResult = validation();
                     return validationResult;
                 }    
@@ -84,9 +87,7 @@ function generatePassword(){
 
 //Generate Numbers
 function toIncludeNumberMethod(){
-
     toIncludeNumber = confirm("Would you like your password includes number?");
-    
     if(toIncludeNumber){
         var assignedNumber = ["0","1","2","3","4","5","6","7","8","9"]
         numericArray = new Array(passLength);
@@ -95,7 +96,6 @@ function toIncludeNumberMethod(){
             numericArray[i] = assignedNumber[index];
         }
         return numericArray;
-        
     }else{
         return toIncludeNumber;
     }
@@ -157,8 +157,9 @@ function toIncludeUppercaseMethod(){
 }
 
 //Check the input of character types
+//false means not include the type, true means include the type
 function validation(){
-    if(toIncludeNumber === false && toIncludeSpecial === true && toIncludeLowercase ==true && toIncludeUppercase === true ){
+    if(toIncludeNumber === false && toIncludeSpecial === true && toIncludeLowercase ==true && toIncludeUppercase === true){
         console.log("No Numeric");
         var preGenerated = specialCharacter +","+ lowercaseLetter +","+ uppercaseLetter;
         var removeComma = preGenerated.replaceAll(",","");
@@ -166,9 +167,11 @@ function validation(){
         for(var i = 0; i < passLength; i++){
             var index = Math.floor(Math.random() * removeComma.length);
             actualPassword = actualPassword + removeComma[index];
+            
         }
-        console.log(actualPassword);
-        return actualPassword;
+
+        //substring(10) that it is to eliminate the undefined output
+        return actualPassword.substring(10);
     }else if( toIncludeNumber === true && toIncludeSpecial === false&& toIncludeLowercase ==true && toIncludeUppercase === true){
         console.log("No Special Characters");
         var preGenerated = numeric +","+ lowercaseLetter +","+uppercaseLetter;
@@ -178,10 +181,9 @@ function validation(){
             var index = Math.floor(Math.random() * removeComma.length);
             actualPassword = actualPassword + removeComma[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;
     }else if(toIncludeNumber === true && toIncludeSpecial ==true && toIncludeLowercase === false &&  toIncludeUppercase === true){
-        //not working correctly, it prints lowercase
         console.log("No Lowercase");
         var preGenerated = specialCharacter +","+ numeric +","+uppercaseLetter;
         var removeComma = preGenerated.replaceAll(",","");
@@ -190,9 +192,9 @@ function validation(){
             var index = Math.floor(Math.random() * removeComma.length);
             actualPassword = actualPassword + removeComma[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;           
-    }else if(toIncludeNumber === true && toIncludeSpecial === true && toIncludeLowercase ==true && toIncludeUppercase === false   ){
+    }else if(toIncludeNumber === true && toIncludeSpecial === true && toIncludeLowercase ==true && toIncludeUppercase === false){
         console.log("No Uppercase");
         var preGenerated = specialCharacter +","+ lowercaseLetter +","+numeric;
         var removeComma = preGenerated.replaceAll(",","");
@@ -201,7 +203,7 @@ function validation(){
             var index = Math.floor(Math.random() * removeComma.length);
             actualPassword = actualPassword + removeComma[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;           
     }
     else if(toIncludeNumber === false && toIncludeSpecial === false  && toIncludeLowercase ==true && toIncludeUppercase === true){
@@ -213,7 +215,7 @@ function validation(){
             var index = Math.floor(Math.random() * removeComma.length);
             actualPassword = actualPassword + removeComma[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;
     }else if(toIncludeNumber === true && toIncludeSpecial === true  && toIncludeLowercase ==false && toIncludeUppercase === false){
         console.log("No Lowercase and Uppercase");
@@ -224,7 +226,7 @@ function validation(){
             var index = Math.floor(Math.random() * removeComma.length);
             actualPassword = actualPassword + removeComma[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;
     }else if(toIncludeNumber === true && toIncludeSpecial === false  && toIncludeLowercase == false && toIncludeUppercase === true){
         console.log("No Lowercase and Special Characters");
@@ -235,7 +237,7 @@ function validation(){
             var index = Math.floor(Math.random() * removeComma.length);
             actualPassword = actualPassword + removeComma[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;
     }
     else if(toIncludeNumber === false && toIncludeSpecial === true && toIncludeLowercase === false && toIncludeUppercase ==true){
@@ -247,7 +249,7 @@ function validation(){
             var index = Math.floor(Math.random() * removeComma.length);
             actualPassword = actualPassword + removeComma[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;
     }else if(toIncludeNumber === false && toIncludeSpecial === true && toIncludeLowercase ==true && toIncludeUppercase === false){
         console.log("No Numeric and Uppercase");
@@ -258,7 +260,7 @@ function validation(){
             var index = Math.floor(Math.random() * removeComma.length);
             actualPassword = actualPassword + removeComma[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;
     }else if(toIncludeNumber === true && toIncludeSpecial === false && toIncludeLowercase ==true && toIncludeUppercase === false){
         console.log("No Special Characters and Uppercase");
@@ -269,7 +271,7 @@ function validation(){
             var index = Math.floor(Math.random() * removeComma.length);
             actualPassword = actualPassword + removeComma[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;
     }
     else if(toIncludeNumber === false && toIncludeSpecial === false && toIncludeLowercase === false && toIncludeUppercase === true){
@@ -279,35 +281,35 @@ function validation(){
             var index = Math.floor(Math.random() * uppercaseLetter.length);
             actualPassword = actualPassword + uppercaseLetter[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;
     }
-    else if(toIncludeNumber === false && toIncludeSpecial === false &&  toIncludeLowercase === true && toIncludeUppercase === false ){
+    else if(toIncludeNumber === false && toIncludeSpecial === false &&  toIncludeLowercase === true && toIncludeUppercase === false){
         console.log("No Numeric, Special Characters and Uppercase");
         var actualPassword = new Array();
         for(var i = 0; i < passLength; i++){
             var index = Math.floor(Math.random() * lowercaseLetter.length);
             actualPassword = actualPassword + lowercaseLetter[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;
-    }else if(toIncludeNumber === false && toIncludeSpecial === true && toIncludeLowercase === false && toIncludeUppercase === false ){
+    }else if(toIncludeNumber === false && toIncludeSpecial === true && toIncludeLowercase === false && toIncludeUppercase === false){
         console.log("No Numeric, Lowercase and Uppercase");
         var actualPassword = new Array();
         for(var i = 0; i < passLength; i++){
             var index = Math.floor(Math.random() * specialCharacter.length);
             actualPassword = actualPassword + specialCharacter[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;
-    }   else if(toIncludeNumber === true  && toIncludeSpecial === false && toIncludeLowercase === false && toIncludeUppercase === false ){
+    }   else if(toIncludeNumber === true  && toIncludeSpecial === false && toIncludeLowercase === false && toIncludeUppercase === false){
             console.log("No Special Character, Lowercase and Uppercase");
             var actualPassword = new Array();
             for(var i = 0; i < passLength; i++){
                 var index = Math.floor(Math.random() * numeric.length);
                 actualPassword = actualPassword + numeric[index];
             }
-            console.log(actualPassword);
+            
             return actualPassword;}
     else {
         console.log("Includes all four character type Numeric, Special Characters, Lowercase and Uppercase");
@@ -318,7 +320,7 @@ function validation(){
             var index = Math.floor(Math.random() * removeComma.length);
             actualPassword = actualPassword + removeComma[index];
         }
-        console.log(actualPassword);
+        
         return actualPassword;
     }
 }
