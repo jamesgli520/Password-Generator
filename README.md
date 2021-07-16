@@ -8,7 +8,7 @@ This is a password generator that generates the password randomly. </br></br>
 It is a password generator application that it has several functionalities:</br>
     1) It has a button to generate password randomly</br>
     2) Ask user to input the length of password
-    3) Check the length of password which it has to be at least 8 characters
+    3) Check the length of password which it has to be at least 8 characters</br>
        and no more than 128 characters.</br>
     4) Users are able to confirm whether or not to include character types.</br>
     5) Check the input that it has to be at least one character type in the
